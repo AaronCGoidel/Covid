@@ -1,0 +1,31 @@
+{
+  "name": "tbd",
+  "version": "0.0.1",
+  "description": "Tracks Covid-19 cases and provides localized Covid news, information, and statistics.",
+  "authors": [
+    {
+      "name": "Aaron Goidel",
+      "email": "acgoidel@gmail.com",
+      "url": "http://aarongoidel.com/"
+    }
+  ],
+  "scripts": {
+    "client": "cd client/ && yarn dev",
+    "server": "cd server/ && yarn dev"
+  },
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronCGoidel/Covid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AaronCGoidel/Covid/issues"
+  },
+  "homepage": "https://github.com/AaronCGoidel/Covid#readme"
+}
