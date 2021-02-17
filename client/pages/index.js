@@ -10,7 +10,9 @@ export default function Home() {
       </Head>
 
       <Main>
-        <Hero></Hero>
+        <Hero>
+          <h1>Foo</h1>
+        </Hero>
         <BelowTheFold></BelowTheFold>
       </Main>
     </div>

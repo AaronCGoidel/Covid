@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./devices";
 
 export const Main = styled.main`
   width: 100vw;
@@ -7,30 +8,39 @@ export const Main = styled.main`
   overflow-x: hidden;
   overflow-y: scroll;
   perspective: 1px;
-  perspective-origin: 0 0;
-  transform-style: preserve-3d;
 
   background-color: #48b1c8;
 `;
 
 export const Hero = styled.div`
-  transform-origin: 0 0;
-  transform: translateZ(-0.4px) scale(1.4);
+  transform: translateZ(-8px) scale(9);
 
-  width: 60vw;
+  width: 100vw;
   height: 100vh;
   background-color: #48b1c8;
-  margin-left: auto;
+
+  margin: 0;
+  padding: 5vh 10vw;
+
+  @media ${device.tablet} {
+    padding: 5vh 0;
+  }
 `;
 
 export const BelowTheFold = styled.div`
-  transform-origin: 0 0;
   transform: translateZ(-1px) scale(2);
 
-  width: 60vw;
+  width: 80vw;
   height: 400vh;
   background-color: #fff;
-  margin-left: auto;
 
   border-radius: 20px 20px 0;
+
+  margin-top: 150vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media ${device.tablet} {
+    width: 100vw;
+  }
 `;
