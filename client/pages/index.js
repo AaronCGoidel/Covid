@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { Main, Hero, BelowTheFold } from "./styles";
+import { H3, Main, Hero, BelowTheFold } from "./styles";
+import CaseGraph from "../components/CaseGraph";
 
 export default function Home() {
   return (
@@ -11,7 +12,9 @@ export default function Home() {
 
       <Main>
         <Hero>
-          <h1>Foo</h1>
+          <H3>New Cases Near</H3>
+          <h1>70</h1>
+          <CaseGraph />
         </Hero>
         <BelowTheFold></BelowTheFold>
       </Main>
