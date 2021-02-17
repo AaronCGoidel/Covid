@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./devices";
+import devices from "../components/devices";
 
 export const H3 = styled.h3`
   margin: 0;
@@ -28,7 +28,7 @@ export const Hero = styled.div`
   margin: 0;
   padding: 5vh 20vw;
 
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     padding: 5vh 0;
   }
 
@@ -51,7 +51,9 @@ export const BelowTheFold = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     width: 100vw;
   }
 `;
+
+export default Main;
