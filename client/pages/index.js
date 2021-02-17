@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { H3, Main, Hero, BelowTheFold } from "./styles";
 import CaseGraph from "../components/CaseGraph";
+import ResourceButtons from "../components/ResourceButtons";
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
           <h1>70</h1>
           <CaseGraph />
         </Hero>
-        <BelowTheFold></BelowTheFold>
+        <BelowTheFold>
+          <ResourceButtons/>
+        </BelowTheFold>
       </Main>
     </div>
   );

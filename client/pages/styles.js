@@ -55,3 +55,43 @@ export const BelowTheFold = styled.div`
     width: 100vw;
   }
 `;
+
+export const ResourceContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+  padding-top: 50px;
+  
+  @media ${device.tablet} {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 70px 70px;
+    justify-items: center;
+  }
+  }
+`;
+
+export const ResourceButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #F4F3F3;
+  width: 150px;
+  height: 57px;
+  border-radius: 25%;
+
+  }
+`;
+
+export const ResourceIcon = styled.div`
+  padding-left: 10px;
+  }
+`;
+
+export const ResourceText = styled.div`
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  }
+`;
