@@ -19,7 +19,9 @@ function useProvideAuth() {
     return firebase
       .auth()
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((response) => setUser(response.user));
+      .then((response) => {
+        setUser(response.user);
+      });
   };
 
   const signinWithFacebook = () => {

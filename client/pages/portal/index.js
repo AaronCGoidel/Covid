@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
+import Router from "next/router";
 import {
   BGContainer,
   Blob,
@@ -14,6 +15,17 @@ import { useAuth } from "../../components/Auth";
 
 const Login = () => {
   const { user, signinWithGoogle, signinWithFacebook, signout } = useAuth();
+
+  useEffect(() => {
+    if (user !== null && user !== false) {
+      const uid = user.uid;
+      // if uid in database:
+      Router.push("/");
+
+      // else
+      Router.push("/portal/onboard");
+    }
+  });
   return (
     <div>
       <Head>

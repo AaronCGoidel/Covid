@@ -1,8 +1,24 @@
+import { useEffect } from "react";
 import Head from "next/head";
+import Router from "next/router";
+
 import { H3, Main, Hero, BelowTheFold } from "./styles";
 import CaseGraph from "../components/CaseGraph";
+import { useAuth } from "../components/Auth";
 
 export default function Home() {
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user === null) {
+      Router.push("/portal");
+    }
+  });
+
+  if (user === null) {
+    return <p>No user, redirecting to login</p>;
+  }
+
   return (
     <div>
       <Head>
