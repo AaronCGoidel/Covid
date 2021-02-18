@@ -31,7 +31,9 @@
     "server",
     "client"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "react-remove-scroll": "^2.4.1"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",

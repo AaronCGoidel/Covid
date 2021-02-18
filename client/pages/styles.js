@@ -58,29 +58,39 @@ export const BelowTheFold = styled.div`
 
 export const ResourceContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   width: 60vw;
   padding-top: 50px;
   
   @media ${device.tablet} {
     width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 70px 70px;
-    justify-items: center;
   }
   }
 `;
 
-export const ResourceButton = styled.div`
+export const ResourceButton = styled.button`
+  
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: #F4F3F3;
-  width: 150px;
+  width: 170px;
   height: 57px;
-  border-radius: 25%;
+  border-radius: 18px;
+  margin: 0.7rem;
+  border: none;
+  font-family: inherit;
 
+  &:hover {
+    box-shadow: 3px 3px 6px 1px grey;
+  }
+  &:active {
+    box-shadow: 1px 1px 2px 1px grey;
+  }
+  &:focus {
+    outline: none;
+  }
   }
 `;
 
@@ -93,5 +103,74 @@ export const ResourceText = styled.div`
   color: black;
   font-size: 1rem;
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+
   }
+`;
+
+export const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0, 0.25);
+}
+`;
+
+
+
+export const ModalSquare = styled.div`
+  width: 70vw;
+  height: 80vh;
+  background-color: white;
+  z-index: 1;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+
+  @keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//   @keyframes slide-in {
+//     from {
+//       transform: translateY(-100vh);
+//     }
+//     to {
+//       transform: translateY(0);
+//     }
+//   }
+}
+`;
+
+export const ModalHeader = styled.div`
+
+
+}
+`;
+
+export const ModalContent = styled.div`
+
+
+}
 `;
