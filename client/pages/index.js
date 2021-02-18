@@ -30,6 +30,7 @@ export default function Home() {
           setModal = {setModal}
           setTitleText = {setTitleText}
           setBodyText = {setBodyText}/>
+          
         </BelowTheFold>
       </Main>
       <RemoveScroll enabled={isModal}>

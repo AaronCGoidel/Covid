@@ -75,7 +75,7 @@ export const ResourceButton = styled.button`
   align-items: center;
   justify-content: space-around;
   background-color: #F4F3F3;
-  width: 170px;
+  width: 160px;
   height: 57px;
   border-radius: 18px;
   margin: 0.7rem;
@@ -84,6 +84,7 @@ export const ResourceButton = styled.button`
 
   &:hover {
     box-shadow: 3px 3px 6px 1px grey;
+    cursor: pointer;
   }
   &:active {
     box-shadow: 1px 1px 2px 1px grey;
@@ -125,52 +126,74 @@ export const ModalContainer = styled.div`
 }
 `;
 
-
-
 export const ModalSquare = styled.div`
   width: 70vw;
   height: 80vh;
   background-color: white;
   z-index: 1;
-  border-radius: 10%;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   animation-name: slide-in;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
+  @media ${device.tablet} {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
 
   @keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
 }
 
-//   @keyframes slide-in {
-//     from {
-//       transform: translateY(-100vh);
-//     }
-//     to {
-//       transform: translateY(0);
-//     }
-//   }
+  @keyframes slide-in {
+    from {
+      transform: translateY(-100vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 }
 `;
 
 export const ModalHeader = styled.div`
-
-
+  padding-left: 5vw;
+  padding-right: 5vw;
+  text-align: center;
 }
 `;
 
 export const ModalContent = styled.div`
-
+  flex-grow: 1;
 
 }
+`;
+
+export const ModalExit = styled.button`
+  display: none;
+  background-color: inherit;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  @media ${device.tablet} {
+    display: block;
+  }}
 `;
