@@ -28,7 +28,7 @@ export const Hero = styled.div`
   margin: 0;
   padding: 5vh 20vw;
 
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     padding: 5vh 0;
   }
 
@@ -57,3 +57,5 @@ export const BelowTheFold = styled.div`
     width: 100vw;
   }
 `;
+
+export default Main;

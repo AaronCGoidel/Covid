@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 html,
 body {
+  font-size: calc(1em + 0.2vw);
   padding: 0;
   margin: 0;
   font-family: Abel;
