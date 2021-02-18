@@ -23,7 +23,7 @@ const Login = () => {
       Router.push("/");
 
       // else
-      Router.push("/portal/onboard");
+      // Router.push("/portal/onboard");
     }
   });
   return (

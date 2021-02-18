@@ -32,7 +32,7 @@ const ResourceButtons = (props) => {
       </ResourceButton>
       <ResourceButton
         onClick={() => (
-          props.setModal(true), props.setTitleText("Info About Covid-19")
+          props.setModal(true), props.setTitleText("About Covid-19")
         )}
       >
         <ResourceIcon>
@@ -49,7 +49,7 @@ const ResourceButtons = (props) => {
             />
           </svg>
         </ResourceIcon>
-        <ResourceText>Info About Covid-19</ResourceText>
+        <ResourceText>About Covid&#8209;19</ResourceText>
       </ResourceButton>
       <ResourceButton
         onClick={() => (

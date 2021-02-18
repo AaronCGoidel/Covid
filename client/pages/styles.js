@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../components/devices";
+import devices from "../components/devices";
 
 export const H3 = styled.h3`
   margin: 0;
@@ -53,7 +53,7 @@ export const BelowTheFold = styled.div`
 
   padding: 1rem;
 
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     width: 100vw;
   }
 `;

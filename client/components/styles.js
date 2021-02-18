@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./devices";
+import devices from "./devices";
 
 export const ResourceContainer = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const ResourceContainer = styled.div`
   max-width: 100%;
   margin: 0;
 
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     width: 100vw;
   }
 `;
@@ -55,7 +55,7 @@ export const ResourceIcon = styled.div`
 
 export const ResourceText = styled.div`
   color: black;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
@@ -92,7 +92,7 @@ export const ModalSquare = styled.div`
   animation-name: slide-in;
   animation-duration: 0.3s;
 
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
@@ -140,7 +140,7 @@ export const ModalExit = styled.button`
   &:hover {
     cursor: pointer;
   }
-  @media ${device.tablet} {
+  @media ${devices.tablet} {
     display: block;
   }
 `;
