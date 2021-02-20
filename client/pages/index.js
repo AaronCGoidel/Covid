@@ -10,16 +10,17 @@ import ResourceButtons from "../components/ResourceButtons";
 import Modal from "../components/Modal";
 import News from "../components/News";
 import firebase from "../components/firebase";
+import Statistics from "../components/Statistics";
 
 const db = firebase.firestore();
-import Statistics from "../components/Statistics";
 
 export default function Home() {
   const [isModal, setModal] = React.useState(false);
   const [titleText, setTitleText] = React.useState("");
   const [bodyText, setBodyText] = React.useState("");
   const [postcode, setPostcode] = useState("");
-  const [cases, setCases] = useState([]);
+  const [data, setData] = useState(null);
+  const [isSick, setIsSick] = useState(false);
 
   const { user } = useAuth();
 
@@ -29,10 +30,12 @@ export default function Home() {
     } else {
       const usersRef = db.collection("users").doc(user.uid);
 
-      usersRef.get().then((doc) => {
-        if (doc.exists) {
-          const post = doc.data()["post_code"];
+      usersRef.get().then((user_doc) => {
+        if (user_doc.exists) {
+          const post = user_doc.data()["post_code"];
           setPostcode(post);
+          const sick = user_doc.data()["is_sick"];
+          setIsSick(sick);
 
           const casesRef = db
             .collection("areas")
@@ -44,10 +47,16 @@ export default function Home() {
             .limit(7)
             .get()
             .then((snapshot) => {
-              snapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
-                setCases([...cases, doc.data()["cases"]]);
-              });
+              setData(
+                snapshot.docs.map((doc) => ({
+                  date: doc
+                    .data()
+                    ["date"].toDate()
+                    .toString()
+                    .match(/(.*?\s){3}/g)[0],
+                  cases: doc.data()["cases"],
+                }))
+              );
             });
         }
       });
@@ -68,8 +77,8 @@ export default function Home() {
       <Main>
         <Hero>
           <H3>New Cases Near {postcode}</H3>
-          <h1>{cases[0]}</h1>
-          <CaseGraph />
+          <h1>{data ? data[data.length - 1]["cases"] : 0}</h1>
+          <CaseGraph data={data} />
         </Hero>
         <BelowTheFold>
           <ResourceButtons

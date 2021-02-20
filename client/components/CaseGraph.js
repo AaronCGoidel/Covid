@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -8,37 +8,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  {
-    name: "Monday",
-    cases: 90,
-  },
-  {
-    name: "Tuesday",
-    cases: 80,
-  },
-  {
-    name: "Wednesday",
-    cases: 10,
-  },
-  {
-    name: "Thursday",
-    cases: 50,
-  },
-  {
-    name: "Friday",
-    cases: 70,
-  },
-];
-
 const CaseGraph = (props) => {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <LineChart
-        data={data}
+        data={props.data}
         margin={{ top: 0, left: 0, right: 40, bottom: 50 }}
       >
-        <XAxis stroke="#fff" dataKey="name" interval="preserveStartEnd" />
+        <XAxis stroke="#fff" dataKey="date" interval="preserveStartEnd" />
         <YAxis stroke="#fff" interval="preserveStartEnd" minTickGap={10} />
         <Tooltip stroke="#000" itemStyle={{ color: "#000" }} />
 
