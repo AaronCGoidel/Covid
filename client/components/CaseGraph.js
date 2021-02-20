@@ -8,10 +8,28 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-
-
-
-
+const data = [
+  {
+    name: "Monday",
+    cases: 90,
+  },
+  {
+    name: "Tuesday",
+    cases: 80,
+  },
+  {
+    name: "Wednesday",
+    cases: 10,
+  },
+  {
+    name: "Thursday",
+    cases: 50,
+  },
+  {
+    name: "Friday",
+    cases: 70,
+  },
+];
 
 const CaseGraph = (props) => {
   return (
