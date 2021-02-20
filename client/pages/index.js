@@ -17,15 +17,15 @@ export default function Home() {
 
   const { user } = useAuth();
 
-  // useEffect(() => {
-  //   if (user === null) {
-  //     Router.push("/portal");
-  //   }
-  // });
+  useEffect(() => {
+    if (user === null) {
+      Router.push("/portal");
+    }
+  });
 
-  // if (user === null) {
-  //   return <p>No user, redirecting to login</p>;
-  // }
+  if (user === null) {
+    return <p>No user, redirecting to login</p>;
+  }
 
   return (
     <div>
@@ -47,10 +47,10 @@ export default function Home() {
             setBodyText={setBodyText}
           />
           <News
-          Title = "Rob Foird Asjh ASDFhi aLa khjd aAp asiho a"
-          Source = "CBC"
-          Content = "Rob Foird Asjh ASDFhi aLa khjd aAp fa sdoiha foaidf asfpdhf sdgdapihawdgfoaihfafodh"
-          Link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            Title="Rob Foird Asjh ASDFhi aLa khjd aAp asiho a"
+            Source="CBC"
+            Content="Rob Foird Asjh ASDFhi aLa khjd aAp fa sdoiha foaidf asfpdhf sdgdapihawdgfoaihfafodh"
+            Link="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />
         </BelowTheFold>
       </Main>
