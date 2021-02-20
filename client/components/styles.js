@@ -121,6 +121,7 @@ export const ModalHeader = styled.div`
   padding-left: 5vw;
   padding-right: 5vw;
   text-align: center;
+  margin-top: 30px;
 `;
 
 export const ModalContent = styled.div`
@@ -129,7 +130,7 @@ export const ModalContent = styled.div`
 
 export const ModalExit = styled.button`
   display: none;
-  background-color: inherit;
+  background-color: transparent;
   position: fixed;
   right: 20px;
   top: 20px;
@@ -153,12 +154,12 @@ export const NewsContainer = styled.div`
   color: black;
 }
 `;
-export const NewsSlider = styled.div `
+export const NewsSlider = styled.div`
   width: 350px;
   overflow: hidden;
 }
-;`
-export const NewsSliderContainer = styled.div `
+;`;
+export const NewsSliderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,7 +177,7 @@ export const NewsSliderContainer = styled.div `
     background: gray;
   }
 }
-;`
+;`;
 
 // SliderButtons
 
@@ -212,9 +213,7 @@ export const NewsGroup = styled.div`
 }
 `;
 
-
-
-export const NewsArticleContainer = styled.a `
+export const NewsArticleContainer = styled.a`
   display: flex;
   width: 340px;
   background-color: #F4F3F3;
@@ -236,13 +235,12 @@ img {
 }
 `;
 
-export const ArticleContentContainer = styled.div `
+export const ArticleContentContainer = styled.div`
   display: flex;
   flex-direction: column;
 
 }
 `;
-
 
 export const ArticleTitle = styled.div`
   display: block;
@@ -257,7 +255,7 @@ export const ArticleTitle = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 }
-`; 
+`;
 
 export const ArticleSource = styled.div`
   display: block;
@@ -273,7 +271,7 @@ export const ArticleSource = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 }
-`; 
+`;
 export const ArticleContent = styled.div`
   display: block;
   display: -webkit-box;
@@ -288,6 +286,4 @@ export const ArticleContent = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 }
-`; 
-
-
+`;
