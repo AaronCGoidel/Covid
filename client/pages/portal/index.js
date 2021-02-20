@@ -59,6 +59,7 @@ const Login = () => {
         </Dude2>
       </BGContainer>
       <SignInContainer>
+        <h3>Track-19</h3>
         <Splash>Covid Tracking for Humans</Splash>
         <GoogleButton onClick={() => signinWithGoogle()}>
           Sign In With Google

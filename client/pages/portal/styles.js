@@ -67,6 +67,7 @@ export const Splash = styled.h1`
   color: #000;
   text-align: center;
   font-family: Lobster, serif;
+  margin-top: 0;
 `;
 
 export default SignInContainer;
