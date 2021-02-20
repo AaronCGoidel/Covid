@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -67,11 +68,16 @@ const getTestingCentreById = (request, response) => {
 };
 
 const createUser = (request, response) => {
+  console.log("The request body is", request.body);
   const { name, code, id } = request.body;
 
   users[id] = [name, code];
   response.status(201).send(`User added with ID: ${id}`);
 };
+
+const getUsers = (request, response) => {
+  response.status(201).json(users);
+}
 
 const updateUser = (request, response) => {
   const id = parseInt(request.params.id);
@@ -81,6 +87,25 @@ const updateUser = (request, response) => {
   response.status(200).send(`User modified with ID: ${id}`);
 };
 
+const getNews = (request, response) => {
+  const code = request.params.code;
+  const SerpApi = require('google-search-results-nodejs');
+  const search = new SerpApi.GoogleSearch("2267c522ba5c5fb8221ae97d08e017fe62df21ee1fc3370baec9bbb4bd846bf3");
+  
+  const params = {
+    q: "COVID " + code, 
+    tbm: "nws",
+    location: "Canada"
+  }
+
+  const callback = function(data) {
+    response.status(200).send(data['news_results']);
+  }
+
+  search.json(params, callback);
+
+}
+
 app.get("/cases/:radius", (req, res) => {
   res.send(data);
 });
@@ -88,6 +113,7 @@ app.get("/cases/:radius", (req, res) => {
 app.get("/centres/:id", getTestingCentreById);
 app.get("/users/:id", getUserById);
 app.post("/users/", createUser);
+app.get("/users", getUsers);
 app.put("/users/:id", updateUser);
-
+app.get("/news/", getNews);
 app.listen(port, () => console.log(`server listening on port ${port}`));
