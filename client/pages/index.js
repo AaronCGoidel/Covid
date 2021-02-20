@@ -9,6 +9,7 @@ import { useAuth } from "../components/Auth";
 import ResourceButtons from "../components/ResourceButtons";
 import Modal from "../components/Modal";
 import News from "../components/News";
+import Statistics from "../components/Statistics";
 
 export default function Home() {
   const [isModal, setModal] = React.useState(false);
@@ -51,6 +52,10 @@ export default function Home() {
           Source = "CBC"
           Content = "Rob Foird Asjh ASDFhi aLa khjd aAp fa sdoiha foaidf asfpdhf sdgdapihawdgfoaihfafodh"
           Link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          />
+          <Statistics
+          
+          
           />
         </BelowTheFold>
       </Main>
