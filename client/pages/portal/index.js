@@ -11,7 +11,7 @@ import {
   SignInContainer,
   Splash,
 } from "./styles";
-import { useAuth } from "../../components/Auth";
+import { useAuth } from "../../hooks/useAuth";
 import firebase from "../../components/firebase";
 import { useCookies } from "react-cookie";
 
@@ -22,10 +22,9 @@ const Login = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["uid"]);
 
   useEffect(() => {
-    if (user !== null && user !== false) {
+    if (user !== null) {
       const uid = user.uid;
       setCookie("uid", uid);
-      console.log(uid);
       const usersRef = db.collection("users").doc(uid);
       usersRef.get().then((docSnapshot) => {
         if (docSnapshot.exists) {
