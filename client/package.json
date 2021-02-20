@@ -9,7 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "firebase": "^8.2.7",
+    "firebase": "^8.2.9",
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
