@@ -50,3 +50,5 @@ const Button = styled.button`
 export const GoBtn = styled(Button)`
   background-color: #000;
 `;
+
+export default Blob;
