@@ -1,6 +1,6 @@
 import React from 'react';
-import { NewsContainer, NewsSlider, NewsSliderContainer, NewsArea, NewsGroup, NewsArticle, PreviewImage, ArticleContentContainer, 
-        ArticleTitle, ArticleSource, ArticleContent } from "./styles"; 
+import { NewsContainer, NewsSlider, NewsSliderContainer, NewsArea, NewsGroup} from "./styles"; 
+import NewsArticle from "./NewsArticle";
 import Link from "next/link";
 
 const News = (props) => {
@@ -11,45 +11,27 @@ const News = (props) => {
                 
                 <NewsArea>
                     <NewsGroup name="slide-1" id="slide-1">
-                        <NewsArticle>
-                            <PreviewImage>
-                                <img src={"Rob.png"}></img>
-                            </PreviewImage>
-                            <ArticleContentContainer>
-                                <ArticleTitle>Rob Ford Bob Schmord the Rord Blord Bored Man Dord</ArticleTitle>
-                                <ArticleSource>CBC</ArticleSource>
-                                <ArticleContent>Bord Drod eat ssmortd asoihf lord bord kord dord ordkalh</ArticleContent>
-                            </ArticleContentContainer>
-                        </NewsArticle>
-                        <NewsArticle>
-                            <PreviewImage>
-                                <img src={"Rob.png"}></img>
-                            </PreviewImage>
-                            <ArticleContentContainer>
-                                <ArticleTitle>Rob Ford Bob Schmord the Rord Blord Bored Man Dord</ArticleTitle>
-                                <ArticleSource>CBC</ArticleSource>
-                                <ArticleContent>Bord Drod eat ssmortd asoihf lord bord kord dord ordkalh</ArticleContent>
-                            </ArticleContentContainer>
-                        </NewsArticle>
-                        <NewsArticle>
-                            <PreviewImage>
-                                <img src={"Rob.png"}></img>
-                            </PreviewImage>
-                            <ArticleContentContainer>
-                                <ArticleTitle>Rob Ford Bob Schmord the Rord Blord Bored Man Dord</ArticleTitle>
-                                <ArticleSource>CBC</ArticleSource>
-                                <ArticleContent>Bord Drod eat ssmortd asoihf lord bord kord dord ordkalh</ArticleContent>
-                            </ArticleContentContainer>
-                        </NewsArticle>
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        <NewsArticle/>
                     </NewsGroup>
                     <NewsGroup name="slide-2" id="slide-2">
-                        2
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        
                     </NewsGroup>
                     <NewsGroup name="slide-3" id="slide-3">
-                        3
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        
                     </NewsGroup>
                     <NewsGroup name="slide-4" id="slide-4">
-                        4
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        <NewsArticle/>
+                        
                     </NewsGroup>
                 </NewsArea>
                 <NewsSliderContainer>
@@ -77,59 +59,3 @@ const News = (props) => {
 }
 
 export default News;
-{/* <CarouselItem>
-
-    <NewsArticle href={props.Link}>
-        <PreviewImage>
-            <img src={"Rob.png"}></img>
-        </PreviewImage>
-        <ArticleContentContainer>
-            <ArticleTitle>{props.Title}</ArticleTitle>
-            <ArticleSource> {props.Source} </ArticleSource>
-            <ArticleContent>{props.Content}</ArticleContent>
-
-        </ArticleContentContainer>
-    </NewsArticle>
-</CarouselItem>
-<CarouselItem>
-
-    <NewsArticle href={props.Link}>
-        <PreviewImage>
-            <img src={"Rob.png"}></img>
-        </PreviewImage>
-        <ArticleContentContainer>
-            <ArticleTitle>{props.Title}</ArticleTitle>
-            <ArticleSource> {props.Source} </ArticleSource>
-            <ArticleContent>{props.Content}</ArticleContent>
-
-        </ArticleContentContainer>
-    </NewsArticle>
-</CarouselItem>
-<CarouselItem>
-
-    <NewsArticle href={props.Link}>
-        <PreviewImage>
-            <img src={"Rob.png"}></img>
-        </PreviewImage>
-        <ArticleContentContainer>
-            <ArticleTitle>{props.Title}</ArticleTitle>
-            <ArticleSource> {props.Source} </ArticleSource>
-            <ArticleContent>{props.Content}</ArticleContent>
-
-        </ArticleContentContainer>
-    </NewsArticle>
-</CarouselItem>
-<CarouselItem>
-
-    <NewsArticle href={props.Link}>
-        <PreviewImage>
-            <img src={"Rob.png"}></img>
-        </PreviewImage>
-        <ArticleContentContainer>
-            <ArticleTitle>{props.Title}</ArticleTitle>
-            <ArticleSource> {props.Source} </ArticleSource>
-            <ArticleContent>{props.Content}</ArticleContent>
-
-        </ArticleContentContainer>
-    </NewsArticle>
-</CarouselItem> */}

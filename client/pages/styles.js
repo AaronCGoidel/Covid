@@ -47,7 +47,7 @@ export const BelowTheFold = styled.div`
 
   border-radius: 20px 20px 0;
 
-  margin-top: 150vh;
+  margin-top: 200vh;
   margin-left: auto;
   margin-right: auto;
 
