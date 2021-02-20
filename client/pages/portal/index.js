@@ -12,18 +12,30 @@ import {
   Splash,
 } from "./styles";
 import { useAuth } from "../../components/Auth";
+import firebase from "../../components/firebase";
+import { useCookies } from "react-cookie";
+
+const db = firebase.firestore();
 
 const Login = () => {
   const { user, signinWithGoogle, signinWithFacebook, signout } = useAuth();
+  const [cookies, setCookie, removeCookie] = useCookies(["uid"]);
 
   useEffect(() => {
     if (user !== null && user !== false) {
       const uid = user.uid;
-      // if uid in database:
-      Router.push("/");
-
-      // else
-      // Router.push("/portal/onboard");
+      setCookie("uid", uid);
+      console.log(uid);
+      const usersRef = db.collection("users").doc(uid);
+      usersRef.get().then((docSnapshot) => {
+        if (docSnapshot.exists) {
+          usersRef.onSnapshot((doc) => {
+            Router.push("/");
+          });
+        } else {
+          Router.push("/portal/onboard");
+        }
+      });
     }
   });
   return (
@@ -38,7 +50,7 @@ const Login = () => {
       </Head>
       <BGContainer>
         <Blob>
-          <img src={"/images/blobs/blob2.svg"} width={400} alt="React Logo" />
+          <img src={"/images/blobs/blob2.svg"} width={400} />
         </Blob>
         <Dude>
           <img src={"/images/dudes/dude1.svg"} />
