@@ -327,6 +327,7 @@ export const StatisticContent = styled.div `
 export const StatisticPreamble = styled.div `
   display: flex;
   align-self: center;
+  font-size: 20px;
 }
 `;
 export const StatisticNumber = styled.div `
