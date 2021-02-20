@@ -286,4 +286,59 @@ export const ArticleContent = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 }
+`; 
+
+export const StatisticContainer = styled.div` 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items; center;
+}
+`;
+
+export const StatisticCard = styled.div `
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  width: 370px;
+  height: 120px;
+  margin: 20px;
+  border-radius: 20px;
+}
+`;
+
+export const StatisticImageContainer = styled.div `
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  margin: 20px;
+}
+`;
+export const StatisticContent = styled.div `
+  display: flex;
+  flex-direction: column;
+  color: black;
+  flex-grow: 1;
+  padding-right: 60px;
+}
+`;
+export const StatisticPreamble = styled.div `
+  display: flex;
+  align-self: center;
+  font-size: 20px;
+}
+`;
+export const StatisticNumber = styled.div `
+display: flex;
+align-self: center;
+font-size: 2.5rem;
+}
+`;
+export const StatisticPostamble = styled.div `
+  display: flex;
+  align-self: center;
+  color: grey;
+}
 `;

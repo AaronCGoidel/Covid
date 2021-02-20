@@ -12,6 +12,7 @@ import News from "../components/News";
 import firebase from "../components/firebase";
 
 const db = firebase.firestore();
+import Statistics from "../components/Statistics";
 
 export default function Home() {
   const [isModal, setModal] = React.useState(false);
@@ -82,6 +83,7 @@ export default function Home() {
             Content="Rob Foird Asjh ASDFhi aLa khjd aAp fa sdoiha foaidf asfpdhf sdgdapihawdgfoaihfafodh"
             Link="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />
+          <Statistics />
         </BelowTheFold>
       </Main>
       <RemoveScroll enabled={isModal}>
