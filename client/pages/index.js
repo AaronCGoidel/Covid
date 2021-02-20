@@ -11,8 +11,29 @@ import Modal from "../components/Modal";
 import News from "../components/News";
 import firebase from "../components/firebase";
 import Statistics from "../components/Statistics";
+import { useCookies } from "react-cookie";
 
 const db = firebase.firestore();
+
+const addCase = (area) => {
+  let ref = db.collection("areas").doc(area).collection("cases");
+  let today = new Date(new Date().setHours(0, 0, 0, 0));
+
+  ref
+    .where("date", ">=", today)
+    .orderBy("date", "asc")
+    .limit(1)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.docs.length >= 1) {
+        let dat = snapshot.docs[0].data();
+        let id = snapshot.docs[0].id;
+        ref.doc(id).set({ ...dat, cases: dat["cases"] + 1 });
+      } else {
+        ref.add({ date: today, cases: 1 });
+      }
+    });
+};
 
 export default function Home() {
   const [isModal, setModal] = React.useState(false);
@@ -21,14 +42,15 @@ export default function Home() {
   const [postcode, setPostcode] = useState("");
   const [data, setData] = useState(null);
   const [isSick, setIsSick] = useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies(["uid"]);
 
   const { user } = useAuth();
 
   useEffect(() => {
-    if (user === null) {
+    if (user === null && cookies["uid"] === undefined) {
       Router.push("/portal");
     } else {
-      const usersRef = db.collection("users").doc(user.uid);
+      const usersRef = db.collection("users").doc(cookies["uid"]);
 
       usersRef.get().then((user_doc) => {
         if (user_doc.exists) {
@@ -63,7 +85,7 @@ export default function Home() {
     }
   }, []);
 
-  if (user === null) {
+  if (user === null && cookies["uid"] === undefined) {
     return <p>No user, redirecting to login</p>;
   }
 
@@ -85,6 +107,9 @@ export default function Home() {
             setModal={setModal}
             setTitleText={setTitleText}
             setBodyText={setBodyText}
+            addCase={() => {
+              addCase(postcode.substring(0, 3));
+            }}
           />
           <News
             Title="Rob Foird Asjh ASDFhi aLa khjd aAp asiho a"
@@ -101,7 +126,7 @@ export default function Home() {
           title={titleText}
           content={bodyText}
           onClose={() => setModal(false)}
-        />
+        ></Modal>
       </RemoveScroll>
     </div>
   );

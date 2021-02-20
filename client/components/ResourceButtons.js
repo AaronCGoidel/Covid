@@ -72,11 +72,7 @@ const ResourceButtons = (props) => {
         </ResourceIcon>
         <ResourceText>Testing Info Around Me</ResourceText>
       </ResourceButton>
-      <ResourceButton
-        onClick={() => (
-          props.setModal(true), props.setTitleText("Report a Case in the House")
-        )}
-      >
+      <ResourceButton onClick={props.addCase}>
         <ResourceIcon>
           <svg
             width="30"

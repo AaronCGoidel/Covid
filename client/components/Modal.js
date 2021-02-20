@@ -7,7 +7,7 @@ import {
   ModalExit,
 } from "./styles";
 
-const Modal = ({ isVisible = false, title, content, onClose }) => {
+const Modal = ({ isVisible = false, title, content, onClose, children }) => {
   const keydownHandler = ({ key }) => {
     switch (key) {
       case "Escape":
@@ -28,7 +28,7 @@ const Modal = ({ isVisible = false, title, content, onClose }) => {
         <ModalHeader>
           <h1>{title}</h1>
         </ModalHeader>
-        <ModalContent>{content}</ModalContent>
+        <ModalContent>{children}</ModalContent>
         <ModalExit onClick={onClose}>
           <svg
             width="30"

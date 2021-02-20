@@ -22,6 +22,16 @@ const Onboard = (props) => {
         is_sick: false,
         post_code: code,
       });
+
+      let ref = db.collection("areas").doc(code.substring(0, 3));
+      ref.get().then((doc) => {
+        if (!doc.exists) {
+          ref.set({});
+          ref
+            .collection("cases")
+            .add({ date: new Date(new Date().setHours(0, 0, 0, 0)), cases: 0 });
+        }
+      });
       Router.push("/");
     }
   };
