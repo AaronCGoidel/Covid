@@ -13,14 +13,3 @@ After that, you will be asked to enter your postal code. Note that there is only
 Finally, you will be taken to the main dashboard, where you can see different Covid related news articles, see information about Covid vaccines, and more:
 
 ![main page](images/Dashboard.JPG)
-
-## TODO
-
-- Name the app
-- Business plan
-- Design the app
-- Implement frontend
-- Implement backend
-- Host the thing
-- Probably a whole bunch of other stuff
-- Presentation
