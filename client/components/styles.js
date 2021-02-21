@@ -126,6 +126,7 @@ export const ModalHeader = styled.div`
 
 export const ModalContent = styled.div`
   flex-grow: 1;
+  overflow: scroll;
 `;
 
 export const ModalExit = styled.button`
