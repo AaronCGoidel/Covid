@@ -8,7 +8,8 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "google-search-results-nodejs": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

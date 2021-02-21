@@ -106,6 +106,25 @@ const getNews = (request, response) => {
 
 }
 
+const getCentres = (request, response) => {
+  const code = request.params.code;
+  const SerpApi = require('google-search-results-nodejs');
+  const search = new SerpApi.GoogleSearch("2267c522ba5c5fb8221ae97d08e017fe62df21ee1fc3370baec9bbb4bd846bf3");
+
+  const params = {
+    q: "COVID Assessment Centres", 
+    location: "Canada",
+    type: "hospital"
+  }
+  // Show result as JSON
+  const callback = function(data) {
+    response.status(200).send(data['organic_results'].slice(2, 6));
+  }
+
+  search.json(params, callback);
+
+}
+
 app.get("/cases/:radius", (req, res) => {
   res.send(data);
 });
@@ -116,4 +135,5 @@ app.post("/users/", createUser);
 app.get("/users", getUsers);
 app.put("/users/:id", updateUser);
 app.get("/news/", getNews);
+app.get("/centres/", getCentres);
 app.listen(port, () => console.log(`server listening on port ${port}`));
