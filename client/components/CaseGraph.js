@@ -10,10 +10,10 @@ import {
 
 const CaseGraph = (props) => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={320}>
       <LineChart
         data={props.data}
-        margin={{ top: 0, left: 0, right: 40, bottom: 50 }}
+        margin={{ top: 20, left: 0, right: 40, bottom: 50 }}
       >
         <XAxis stroke="#fff" dataKey="date" interval="preserveStartEnd" />
         <YAxis stroke="#fff" interval="preserveStartEnd" minTickGap={10} />
