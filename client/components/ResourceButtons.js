@@ -11,7 +11,9 @@ const ResourceButtons = (props) => {
     <ResourceContainer>
       <ResourceButton
         onClick={() => (
-          props.setModal(true), props.setTitleText("Info About Vaccines")
+          props.setModal(true),
+          props.setTitleText("Info About Vaccines"),
+          props.setBodyText(1)
         )}
       >
         <ResourceIcon>
@@ -32,7 +34,9 @@ const ResourceButtons = (props) => {
       </ResourceButton>
       <ResourceButton
         onClick={() => (
-          props.setModal(true), props.setTitleText("About Covid-19")
+          props.setModal(true),
+          props.setTitleText("About Covid-19"),
+          props.setBodyText(2)
         )}
       >
         <ResourceIcon>
@@ -53,7 +57,9 @@ const ResourceButtons = (props) => {
       </ResourceButton>
       <ResourceButton
         onClick={() => (
-          props.setModal(true), props.setTitleText("Testing Info Around Me")
+          props.setModal(true),
+          props.setTitleText("Testing Info Around Me"),
+          props.setBodyText(3)
         )}
       >
         <ResourceIcon>
