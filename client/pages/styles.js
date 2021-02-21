@@ -22,7 +22,7 @@ export const Hero = styled.div`
   transform: translateZ(-8px) scale(9);
 
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   background-color: #48b1c8;
 
   margin: 0;
@@ -42,7 +42,7 @@ export const BelowTheFold = styled.div`
   transform: translateZ(-1px) scale(2);
 
   width: 60vw;
-  height: 400vh;
+  height: 350vh;
   background-color: #fff;
 
   border-radius: 20px 20px 0;

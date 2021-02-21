@@ -57,9 +57,6 @@ const News = (props) => {
           <Link href="#slide-3" scroll={false}>
             <a>3</a>
           </Link>
-          <Link href="#slide-4" scroll={false}>
-            <a>4</a>
-          </Link>
         </NewsSliderContainer>
       </NewsSlider>
     </NewsContainer>
