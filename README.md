@@ -6,13 +6,13 @@ This is the backend for the site. The link to the site is https://track19.ca/.
 
 Once there, you will be prompted to sign in with either Facebook or Google: 
 
-
+![signin](images/SignIn.JPG)
 
 After that, you will be asked to enter your postal code. Note that there is only information for the postal code M5S1A1. There is no information on changes in covid cases for other postal codes.
 
-Finally, you will be taken to the main dashboard, where you can see different Covid related news articles, see information about Covid vaccines, and more.
+Finally, you will be taken to the main dashboard, where you can see different Covid related news articles, see information about Covid vaccines, and more:
 
-
+![main page](images/Dashboard.JPG)
 
 ## TODO
 
