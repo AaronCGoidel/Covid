@@ -44,6 +44,7 @@ export default function Home() {
   const [postcode, setPostcode] = useState("");
   const [data, setData] = useState(null);
   const [isSick, setIsSick] = useState(false);
+  const [update, setUpdate] = useState(0);
   const [cookies, setCookie, removeCookie] = useCookies(["uid"]);
 
   const { user } = useAuth();
@@ -101,7 +102,7 @@ export default function Home() {
       <Main>
         <Hero>
           <H3>New Cases Near {postcode}</H3>
-          <h1>{data ? data[data.length - 1]["cases"] : 0}</h1>
+          <h1>{data ? data[data.length - 1]["cases"] + update : update}</h1>
           <CaseGraph data={data} />
         </Hero>
         <BelowTheFold>
@@ -111,14 +112,10 @@ export default function Home() {
             setBodyText={setBodyText}
             addCase={() => {
               addCase(postcode.substring(0, 3));
+              setUpdate(update + 1);
             }}
           />
-          <News
-            Title="Rob Foird Asjh ASDFhi aLa khjd aAp asiho a"
-            Source="CBC"
-            Content="Rob Foird Asjh ASDFhi aLa khjd aAp fa sdoiha foaidf asfpdhf sdgdapihawdgfoaihfafodh"
-            Link="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          />
+          <News />
           <Statistics />
         </BelowTheFold>
       </Main>
