@@ -1,5 +1,5 @@
 # Track-19
-Website designed to be a one-stop shop for updates on Covid cases, vaccination information, and other covid-related news
+Website designed to be a one-stop shop for updates on Covid cases, vaccination information, and other covid-related news. The project is inspired by the competition Hack The Case. 
 
 ## Installation
 This is the backend for the site. The link to the site is https://track19.ca/.
