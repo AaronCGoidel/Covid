@@ -8,16 +8,17 @@ import {
   ArticleContent,
 } from "./styles";
 
-const NewsArticle = (props) => {
+const NewsArticle = ({ article }) => {
   return (
-    <NewsArticleContainer href={props.link}>
+    <NewsArticleContainer href={article?.url}>
       <PreviewImage>
-        <img src={props.img}></img>
+        <img src={article?.image.thumbnail.contentUrl}></img>
       </PreviewImage>
       <ArticleContentContainer>
-        <ArticleTitle>{props.title}</ArticleTitle>
-        <ArticleSource>{props.source}</ArticleSource>
-        <ArticleContent>{props.blurb}</ArticleContent>
+        <ArticleTitle>
+          {article?.name.replace(/[^\x00-\x7F]/g, "")}
+        </ArticleTitle>
+        <ArticleSource>{article?.provider[0].name}</ArticleSource>
       </ArticleContentContainer>
     </NewsArticleContainer>
   );

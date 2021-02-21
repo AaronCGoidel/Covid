@@ -238,7 +238,7 @@ img {
 export const ArticleContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  height: 100px;
 }
 `;
 
@@ -248,10 +248,9 @@ export const ArticleTitle = styled.div`
   max-width: 100%;
   margin: 5px auto;
   width: 200px;
+  height: 90px;
   font-size: 1rem;
   line-height: 1;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -264,22 +263,7 @@ export const ArticleSource = styled.div`
   margin: 0 auto;
   width: 200px;
   font-size: 15px;
-  margin-bottom: 12px;
-  line-height: 1;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-`;
-export const ArticleContent = styled.div`
-  display: block;
-  display: -webkit-box;
-  max-width: 100%;
-  margin: 0 auto;
-  width: 200px;
-  font-size: 15px;
-  color: gray;
+  // margin-bottom: 12px;
   line-height: 1;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
