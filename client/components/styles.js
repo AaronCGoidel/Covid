@@ -246,9 +246,9 @@ export const ArticleTitle = styled.div`
   display: block;
   display: -webkit-box;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 5px auto;
   width: 200px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -286,7 +286,7 @@ export const ArticleContent = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 }
-`; 
+`;
 
 export const StatisticContainer = styled.div` 
   display: flex;
@@ -296,7 +296,7 @@ export const StatisticContainer = styled.div`
 }
 `;
 
-export const StatisticCard = styled.div `
+export const StatisticCard = styled.div`
   display: flex;
   align-items: center;
   align-self: center;
@@ -308,7 +308,7 @@ export const StatisticCard = styled.div `
 }
 `;
 
-export const StatisticImageContainer = styled.div `
+export const StatisticImageContainer = styled.div`
   img {
     height: 100px;
     width: 100px;
@@ -316,7 +316,7 @@ export const StatisticImageContainer = styled.div `
   margin: 20px;
 }
 `;
-export const StatisticContent = styled.div `
+export const StatisticContent = styled.div`
   display: flex;
   flex-direction: column;
   color: black;
@@ -324,19 +324,19 @@ export const StatisticContent = styled.div `
   padding-right: 60px;
 }
 `;
-export const StatisticPreamble = styled.div `
+export const StatisticPreamble = styled.div`
   display: flex;
   align-self: center;
   font-size: 20px;
 }
 `;
-export const StatisticNumber = styled.div `
+export const StatisticNumber = styled.div`
 display: flex;
 align-self: center;
 font-size: 2.5rem;
 }
 `;
-export const StatisticPostamble = styled.div `
+export const StatisticPostamble = styled.div`
   display: flex;
   align-self: center;
   color: grey;
