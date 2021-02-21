@@ -20,7 +20,7 @@ const Onboard = (props) => {
     } else {
       db.collection("users").doc(uid).set({
         is_sick: false,
-        post_code: code,
+        post_code: code.toUpperCase(),
       });
 
       let ref = db.collection("areas").doc(code.substring(0, 3));

@@ -19,7 +19,6 @@ const News = (props) => {
       .then((response) => response.json())
       .then((res) => {
         const articles = res.articles;
-        console.log(articles);
         setArticles(articles);
       });
   }, []);
