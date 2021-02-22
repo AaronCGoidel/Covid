@@ -12,7 +12,13 @@ const NewsArticle = ({ article }) => {
   return (
     <NewsArticleContainer href={article?.url}>
       <PreviewImage>
-        <img src={article?.image.thumbnail.contentUrl}></img>
+        <img
+          src={
+            article?.image
+              ? article.image.thumbnail.contentUrl
+              : "/images/news.svg"
+          }
+        ></img>
       </PreviewImage>
       <ArticleContentContainer>
         <ArticleTitle>
